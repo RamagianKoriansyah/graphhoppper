@@ -8,6 +8,8 @@ route_url = "https://graphhopper.com/api/1/route?"
 key = "1a48a927-20ec-463a-b97c-dd79c05fb27f"  ### Replace with your API key
 
 def geocoding (location, key):
+    while location == "":
+        location = input("Enter the location again: ")
     geocode_url = "https://graphhopper.com/api/1/geocode?" 
     url = geocode_url + urllib.parse.urlencode({"q":location, "limit": "1", "key":key})
 
